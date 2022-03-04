@@ -6,7 +6,6 @@ import classes from "./index.module.css";
 
 const Table = () => {
   const dataInfo = useContext(UserContext);
-  console.log(dataInfo);
   return (
     <table className={classes.userTable}>
       <thead>
