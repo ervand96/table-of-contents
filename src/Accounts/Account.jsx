@@ -16,7 +16,7 @@ const Accounts = () => {
 
   return (
     <div className={classes.div}>
-      <h1>Users Page</h1>
+      <h1>User {id}</h1>
       {fillUser && (
         <table className={classes.userTable}>
           <thead>
