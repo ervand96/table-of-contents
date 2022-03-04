@@ -1,9 +1,9 @@
 import React from "react";
-import {Routes, BrowserRouter, Route} from "react-router-dom";
-import "./App.css";
+import { Routes, BrowserRouter, Route } from "react-router-dom";
 import Users from "./Users/Users";
-import Accounts from "./Accounts/Account";
-import {Provider} from "./context";
+import Accounts from "./Accounts/Accounts";
+import { Provider } from "./context";
+import "./App.css";
 
 function App() {
   return (

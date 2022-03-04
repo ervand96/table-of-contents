@@ -1,9 +1,12 @@
-import React from "react";
-import {NavLink} from "react-router-dom";
+import React, { useContext } from "react";
+import { UserContext } from "../../context";
+import { NavLink } from "react-router-dom";
 import classes from "./index.module.css";
-import {usersInfo} from "../../Utils/constants";
+
 
 const Table = () => {
+  const dataInfo = useContext(UserContext);
+  console.log(dataInfo);
   return (
     <table className={classes.userTable}>
       <thead>
@@ -15,7 +18,7 @@ const Table = () => {
           <th>Action</th>
         </tr>
       </thead>
-      {usersInfo.map((info) => (
+      {dataInfo && dataInfo.map((info) => (
         <tbody key={info.id} className={classes.tableMap}>
           <tr>
             <td>{info.id}</td>
