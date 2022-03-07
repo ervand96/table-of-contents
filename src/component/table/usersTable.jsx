@@ -1,15 +1,14 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../context";
 import { NavLink } from "react-router-dom";
-import classes from "./index.module.css";
-
+import classes from "./usersTable.module.css";
 
 const Table = () => {
   const dataInfo = useContext(UserContext);
   return (
     <table className={classes.userTable}>
       <thead>
-        <tr className={classes.tr}>
+        <tr>
           <th>ID</th>
           <th>Name</th>
           <th>Created On</th>
