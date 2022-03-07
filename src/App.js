@@ -1,22 +1,22 @@
 import React from "react";
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import Users from "./Users/Users";
-import Accounts from "./Accounts/Accounts";
-import { Provider } from "./context";
+import DataUser from "./Accounts/Accounts";
+import { UsersProvider } from "./context";
 import "./App.css";
 
 function App() {
   return (
-    <Provider>
+    <UsersProvider >
       <div className="App">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Users />} />
-            <Route path="/account/:id" element={<Accounts />} />
+            <Route path="/account/:id" element={<DataUser />} />
           </Routes>
         </BrowserRouter>
       </div>
-    </Provider>
+    </UsersProvider>
   );
 }
 

@@ -3,43 +3,43 @@ import { useParams } from "react-router-dom";
 import { UserContext } from "../context";
 import classes from "./accounts.module.css";
 
-const Accounts = () => {
+const DataUser = () => {
   const { id } = useParams();
-  const [findUser, setFindUser] = useState(null);
-  const peopleInfo = useContext(UserContext);
+  const [userData, setUserData] = useState(null);
+  const userInfo = useContext(UserContext);
 
   useEffect(() => {
     if (id) {
-      const people = peopleInfo.find((users) => users.id == id);
-      setFindUser(people);
+      const users = userInfo.find((users) => users.id == id);
+      setUserData(users);
     }
   }, [id]);
 
   return (
-    <div className={classes.dataUser}>
+    <div className={classes.tableSection}>
       <h1>User {id}</h1>
-      {findUser && (
+      {userData && (
         <table className={classes.userTable}>
           <thead>
             <tr>
               <th>ID</th>
-              <td>{findUser.id}</td>
+              <td>{userData.id}</td>
             </tr>
             <tr>
               <th>Name</th>
-              <td>{findUser.name}</td>
+              <td>{userData.name}</td>
             </tr>
             <tr>
               <th>Owner</th>
-              <td>{findUser.owner}</td>
+              <td>{userData.owner}</td>
             </tr>
             <tr>
               <th>Created On</th>
-              <td>{findUser.createdOn}</td>
+              <td>{userData.createdOn}</td>
             </tr>
             <tr>
               <th>Update On</th>
-              <td>{findUser.updatedOn}</td>
+              <td>{userData.updatedOn}</td>
             </tr>
           </thead>
         </table>
@@ -48,4 +48,4 @@ const Accounts = () => {
   );
 };
 
-export default Accounts;
+export default DataUser;

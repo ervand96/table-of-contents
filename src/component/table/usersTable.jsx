@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import classes from "./usersTable.module.css";
 
 const Table = () => {
-  const dataInfo = useContext(UserContext);
+  const userDataInfo = useContext(UserContext);
   return (
     <table className={classes.userTable}>
       <thead>
@@ -16,7 +16,7 @@ const Table = () => {
           <th>Action</th>
         </tr>
       </thead>
-      {dataInfo && dataInfo.map((info) => (
+      {userDataInfo && userDataInfo.map((info) => (
         <tbody key={info.id} className={classes.tableMap}>
           <tr>
             <td>{info.id}</td>
