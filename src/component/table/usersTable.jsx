@@ -1,10 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context";
 import { NavLink } from "react-router-dom";
 import classes from "./usersTable.module.css";
 
 const Table = () => {
-  const userDataInfo = useContext(UserContext);
+  const users = useContext(UserContext);
+  const [userBack, setUserBack] = useState(null);
+  useEffect(() => {
+    if (users) {
+      setUserBack(users.users)
+    }
+  }, [users])
+
   return (
     <table className={classes.userTable}>
       <thead>
@@ -16,7 +23,7 @@ const Table = () => {
           <th>Action</th>
         </tr>
       </thead>
-      {userDataInfo && userDataInfo.map((info) => (
+      {userBack && userBack.map((info) => (
         <tbody key={info.id} className={classes.tableMap}>
           <tr>
             <td>{info.id}</td>
