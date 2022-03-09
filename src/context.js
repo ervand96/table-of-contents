@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-
 export const UserContext = React.createContext();
-
 export const UsersProvider = (props) => {
     const [usersData, setUsersData] = useState(null)
     const requestURL = "http://localhost:4000/users"
@@ -29,7 +27,6 @@ export const UsersProvider = (props) => {
             .then(data => setUsersData(JSON.parse(data)))
             .catch(err => console.log(err))
     }, [])
-
 
     return (
         <UserContext.Provider value={usersData}>

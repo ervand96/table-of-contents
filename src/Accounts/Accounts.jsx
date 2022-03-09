@@ -14,10 +14,6 @@ const DataUser = () => {
     }
   }, [id, user]);
 
-  useEffect(() => {
-
-  })
-
   return (
     <div className={classes.tableSection}>
       <h1>User {id}</h1>
