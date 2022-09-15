@@ -5,15 +5,14 @@ import classes from "./accounts.module.css";
 
 const DataUser = () => {
   const { id } = useParams();
+  const user = useContext(UserContext);
   const [userData, setUserData] = useState(null);
-  const userInfo = useContext(UserContext);
-
   useEffect(() => {
-    if (id) {
-      const users = userInfo.find((users) => users.id == id);
+    if (id && user?.users) {
+      const users = user.users.find((users) => users.id == id);
       setUserData(users);
     }
-  }, [id]);
+  }, [id, user]);
 
   return (
     <div className={classes.tableSection}>
